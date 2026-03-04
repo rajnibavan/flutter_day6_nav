@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_day6/second_screen.dart';
-import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -36,13 +35,17 @@ class homescreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.red, Colors.white, Colors.red],
+            colors: [
+              Colors.red,
+              const Color.fromARGB(255, 2, 0, 0),
+              Colors.red,
+            ],
           ),
         ),
         child: Padding(
           padding: EdgeInsets.all(30),
           child: Card(
-            color: Colors.white,
+            color: const Color.fromARGB(255, 244, 243, 243),
             elevation: 15,
             shadowColor: Colors.black,
             shape: RoundedRectangleBorder(
@@ -51,7 +54,7 @@ class homescreen extends StatelessWidget {
 
             child: Column(
               children: [
-                SizedBox(height: 30, width: 30),
+                SizedBox(height: 40, width: 30),
 
                 RichText(
                   textAlign: TextAlign.center,
@@ -65,7 +68,7 @@ class homescreen extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: ' My Audio Service\n',
-                        style: TextStyle(fontSize: 25),
+                        style: TextStyle(fontSize: 30),
                       ),
 
                       TextSpan(
@@ -79,13 +82,13 @@ class homescreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 5, width: 30),
+                SizedBox(height: 50, width: 30),
 
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: Image(image: AssetImage('assets/ishq.jpg')),
                 ),
-                SizedBox(height: 5, width: 30),
+                SizedBox(height: 50, width: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -103,7 +106,7 @@ class homescreen extends StatelessWidget {
                           backgroundColor: Colors.red,
                         ),
                         child: Text(
-                          '1.2K Listeners',
+                          '3.2K Listeners',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
@@ -143,6 +146,7 @@ class homescreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 50),
                 GestureDetector(
                   onDoubleTap: () {
                     Navigator.push(
@@ -150,13 +154,14 @@ class homescreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => SecondScreen()),
                     );
                   },
+
                   child: const Text(
                     'Read About more',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                       color: Colors.redAccent,
-                      decoration: TextDecoration.underline,
+                      decoration: TextDecoration.none,
                     ),
                   ),
                 ),
@@ -167,11 +172,4 @@ class homescreen extends StatelessWidget {
       ),
     );
   }
-
-  // child: ElevatedButton(
-  //   onPressed: () {
-  //     Navigator.pop(context);
-  //   },
-  //   child: const Text('Go to HOME'),
-  // ),
 }
