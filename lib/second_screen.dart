@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_day6/WriterProfile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -100,24 +101,25 @@ class _SecondScreenState extends State<SecondScreen> {
                   Row(
                     children: [
                       _buildActionButton(
-                        Icons.home,
-                        'HomePage',
-                        () => Navigator.pop(context),
+                        Icons.person_pin,
+                        'Writer Profile',
+                        () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const WriterProfile(),
+                          ),
+                        ),
                       ),
                       const SizedBox(width: 15),
-                      _buildActionButton(
-                        Icons.subscriptions,
-                        'Subscribe',
-                        () async {
-                          final Uri url = Uri.parse(
-                            'https://pocketfm.comn/show/ishq-hindi/1aab123c2lsda612014dc46eb9626723a554a45fd9',
-                          );
-                          await launchUrl(
-                            url,
-                            mode: LaunchMode.externalApplication,
-                          );
-                        },
-                      ),
+                      _buildActionButton(Icons.headset, 'Listening', () async {
+                        final Uri url = Uri.parse(
+                          'https://pocketfm.com/show/ishq-hindi/1aab123c2da612014dc46eb9626723a554a45fd9',
+                        );
+                        await launchUrl(
+                          url,
+                          mode: LaunchMode.externalApplication,
+                        );
+                      }),
                     ],
                   ),
 
@@ -203,6 +205,34 @@ class _SecondScreenState extends State<SecondScreen> {
                     ],
                   ),
                   const SizedBox(height: 50),
+
+                  const SizedBox(height: 40),
+                  const Divider(color: Colors.white10),
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      onPressed: () => Navigator.pop(context),
+                      icon: const Icon(
+                        Icons.home_outlined,
+                        color: Colors.white70,
+                      ),
+                      label: const Text(
+                        "Back to Home Screen",
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        side: const BorderSide(
+                          color: Color.fromARGB(26, 114, 99, 99),
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
