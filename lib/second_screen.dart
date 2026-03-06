@@ -249,6 +249,7 @@ class _SecondScreenState extends State<SecondScreen> {
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: Colors.red[400],
+        // ignore: deprecated_member_use
         backgroundColor: Colors.red.withOpacity(0.1),
       ),
     );

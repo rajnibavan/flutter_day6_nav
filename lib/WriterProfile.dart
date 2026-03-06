@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 void main() => runApp(const WriterProfile());
@@ -27,6 +28,7 @@ class WriterProfile extends StatelessWidget {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
+                          // ignore: deprecated_member_use
                           Colors.red.withOpacity(0.3),
                           const Color(0xFF1A1A1A),
                         ],
@@ -44,6 +46,7 @@ class WriterProfile extends StatelessWidget {
                           border: Border.all(color: Colors.redAccent, width: 2),
                           boxShadow: [
                             BoxShadow(
+                              // ignore: deprecated_member_use
                               color: Colors.red.withOpacity(0.2),
                               blurRadius: 20,
                             ),
@@ -151,6 +154,7 @@ class WriterProfile extends StatelessWidget {
                   Text(
                     "MCA Professional by day, Dreamer by night. I write stories that blend modern logic with timeless emotions. Author of the trending series 'Ishq'.",
                     style: TextStyle(
+                      // ignore: deprecated_member_use
                       color: Colors.white.withOpacity(0.7),
                       fontSize: 15,
                       height: 1.5,
@@ -181,11 +185,11 @@ class WriterProfile extends StatelessWidget {
                   height: 220,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 10),
                     children: [
                       _buildBookCard("Ishq", "assets/ishq.jpg", "4.8 ★"),
                       _buildBookCard("Ishqtara", "assets/ISHQA.png", "4.5 ★"),
-                      // _buildBookCard("Junoon", "assets/book3.jpg", "4.9 ★"),
+                      _buildBookCard("Junoon", "assets/ishq.jpg", "4.9 ★"),
                     ],
                   ),
                 ),
