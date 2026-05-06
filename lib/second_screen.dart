@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_day6/WriterProfile.dart';
+import 'package:flutter_day6/writer_profile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
